@@ -153,3 +153,11 @@ public class App {
             System.out.println(
                     "It's a draw! Thanks for playing.");
         }
+        // For winner -to display Congratulations! message.
+        else {
+            System.out.println(
+                    "Congratulations! " + winner
+                            + "'s have won! Thanks for playing.");
+        }
+    }
+}
