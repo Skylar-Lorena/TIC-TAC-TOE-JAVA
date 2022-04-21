@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -106,5 +107,43 @@ public class App {
 
         while (winner == null) {
             int numInput;
-    }
+
+            // Exception handling.
+            // numInput will take input from user like from 1 to 9.
+            // If it is not in range from 1 to 9.
+            // then it will show you an error "Invalid input."
+            try {
+                numInput = in.nextInt();
+                if (!(numInput > 0 && numInput <= 9)) {
+                    System.out.println(
+                            "Invalid input; re-enter slot number:");
+                    continue;
+                }
+            }
+            catch (InputMismatchException e) {
+                System.out.println(
+                        "Invalid input; re-enter slot number:");
+                continue;
+            }
+            // This game has two player x and O.
+            // Here is the logic to decide the turn.
+            if (board[numInput - 1].equals(
+                    String.valueOf(numInput))) {
+                board[numInput - 1] = turn;
+
+                if (turn.equals("X")) {
+                    turn = "O";
+                }
+                else {
+                    turn = "X";
+                }
+
+                printBoard();
+                winner = checkWinner();
+            }
+            else {
+                System.out.println(
+                        "Slot already taken; re-enter slot number:");
+
+            }
 }
