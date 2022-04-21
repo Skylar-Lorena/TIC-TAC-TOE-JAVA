@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class App {
     static String[] board;
     static String turn;
@@ -43,5 +45,20 @@ public class App {
                 return "O";
             }
         }
+        for (int a = 0; a < 9; a++) {
+            if (Arrays.asList(board).contains(
+                    String.valueOf(a + 1))) {
+                break;
+            }
+            else if (a == 8) {
+                return "draw";
+            }
+        }
+        // To enter the X Or O at the exact place on board.
+        System.out.println(
+                turn + "'s turn; enter a slot number to place "
+                        + turn + " in:");
+        return null;
+    }
     }
 }
