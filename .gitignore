@@ -41,6 +41,10 @@ gradle
 gradlew.bat
 gradlew
 settings.gradle
+gradlew.bat
+gradlew
+.gradle
+
 
 # IntelliJ #
 ############
