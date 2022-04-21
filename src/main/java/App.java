@@ -147,3 +147,9 @@ public class App {
 
             }
 }
+        // If no one win or lose from both player x and O.
+        // then here is the logic to print "draw".
+        if (winner.equalsIgnoreCase("draw")) {
+            System.out.println(
+                    "It's a draw! Thanks for playing.");
+        }
